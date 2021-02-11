@@ -1,5 +1,13 @@
 # Repeater Reload 2.0 by Flek
 
+This trigger will:
+- Automatically reload a single blaster (such as a repeater or rifle) with an ammo object from your inventory
+- Gag multiple lines of the `*CLICK* ... your blaster needs a new ammunition cell!` message
+- The trigger resets after 10 seconds
+
+To install, copy the below code, open MUSHClient's Triggers window, and click 'Paste'
+
+
 <triggers>
   <trigger
    enabled="y"
