@@ -1,0 +1,27 @@
+# Repeater Reload 2.0 by Flek
+
+<triggers>
+  <trigger
+   enabled="y"
+   group="qol"
+   match="*... your * needs *!"
+   name="bowreload1"
+   send_to="12"
+   sequence="100"
+  >
+  <send>Send("Ammo")
+EnableTrigger("bowreload1", false)
+EnableTrigger("bowreload2", true)
+DoAfterSpecial(9, 'EnableTrigger("bowreload2", false)',12)
+DoAfterSpecial(10, 'EnableTrigger("bowreload1", true)',12)</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="qol"
+   match="*... your * needs *!"
+   name="bowreload2"
+   omit_from_output="y"
+   sequence="100"
+  >
+  </trigger>
+</triggers>
