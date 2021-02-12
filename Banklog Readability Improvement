@@ -1,0 +1,42 @@
+# Banklog Magic by Flek
+
+This trigger will make banklogs more readable.
+
+To install, copy the below code, open MUSHClient's Triggers window, and click 'Paste'
+
+<triggers>
+  <trigger
+   enabled="y"
+   group="Banklog"
+   match="^\{ (.*?) (.*?) +(.*?) (.*?)\:(.*?)\:(.*?) (.*?)$"
+   omit_from_output="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>SetVariable("Day", "%1")
+SetVariable("Month", "%2")
+SetVariable("Date", "%3")
+SetVariable("Year", "%7")</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Banklog"
+   match="^\} (.*?)\: (.*?) \- (.*?)$"
+   omit_from_output="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>SetVariable("Source", "%1")
+SetVariable("Amount", "%2")
+SetVariable("Reason", "%3")
+source=GetVariable("Source")
+amount=GetVariable("Amount")
+reason=GetVariable("Reason")
+month=GetVariable("Month")
+date=GetVariable("Date")
+year=GetVariable("Year")
+ColourNote("White", "", month, "", "", " ", "Gray", "", date, "", "", " ", "White", "", year, "", "", " ", "Gray", "", source, "", "", " ", "White", "", amount, "", "", " ", "Gray", "", reason)</send>
+  </trigger>
+</triggers>
