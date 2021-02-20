@@ -1,0 +1,26 @@
+# Monitor Camera Enhancements by Flek
+# Efficiently scans all cameras
+
+<triggers>
+  <trigger
+   enabled="y"
+   group="cameraspam"
+   match="Camera signal read... signal number *"
+   sequence="100"
+  >
+  <send>moni %1</send>
+  </trigger>
+</triggers>
+
+<aliases>
+  <alias
+   match="spy"
+   enabled="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableGroup("cameraspam", true)
+Send("moni")
+DoAfterSpecial(5, 'EnableGroup("cameraspam", false)', 12)</send>
+  </alias>
+</aliases>
