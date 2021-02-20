@@ -1,4 +1,4 @@
-# LotJ Scripting Repository
+# LotJ MUSHClient Scripting Repository
 A common repository for MUSHClient scripts &amp; helpful programs not integrated into LotJClient
 
 Find the MUSHClient-based LOTJ Client here: https://github.com/Xavious/LotjClient
